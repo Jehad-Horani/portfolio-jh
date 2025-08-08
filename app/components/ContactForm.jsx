@@ -1,9 +1,9 @@
-"use client"; // لو تستخدم Next.js 13 app directory
+"use client";
 
 import { useState } from "react";
 import { supabase } from "/lib/supabaseClient";
 
-export default function ContactForm() {
+export default function ContactSection() {
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -24,7 +24,7 @@ export default function ContactForm() {
     setMessage("");
 
     if (!form.name || !form.email) {
-      setMessage("يرجى تعبئة الاسم والإيميل");
+      setMessage("يرجى تعبئة الاسم والبريد الإلكتروني");
       setLoading(false);
       return;
     }
@@ -49,64 +49,84 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto p-6 bg-white rounded shadow">
-      <h2 className="text-2xl font-bold mb-4">نموذج طلب التواصل</h2>
+    <section
+      id="contact"
+      className="bg-gradient-to-tr from-indigo-900 via-purple-900 to-pink-900 py-16 px-6 md:px-16 text-white"
+    >
+      <div className="max-w-3xl mx-auto bg-white/10 backdrop-blur-md rounded-xl shadow-xl p-8">
+        <h2 className="text-4xl font-extrabold mb-8 text-center drop-shadow-lg">
+          Get in Touch
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <label className="block">
+            <span className="text-white font-semibold">الاسم *</span>
+            <input
+              type="text"
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              required
+              className="mt-1 w-full rounded-md border border-white/30 bg-white/10 px-4 py-3 text-white placeholder-white/70 focus:border-pink-500 focus:ring focus:ring-pink-400 focus:ring-opacity-50 transition"
+              placeholder="أدخل اسمك"
+            />
+          </label>
 
-      <label className="block mb-2">
-        الاسم *
-        <input
-          type="text"
-          name="name"
-          value={form.name}
-          onChange={handleChange}
-          required
-          className="w-full border p-2 rounded mt-1"
-        />
-      </label>
+          <label className="block">
+            <span className="text-white font-semibold">رقم الهاتف</span>
+            <input
+              type="tel"
+              name="phone"
+              value={form.phone}
+              onChange={handleChange}
+              className="mt-1 w-full rounded-md border border-white/30 bg-white/10 px-4 py-3 text-white placeholder-white/70 focus:border-pink-500 focus:ring focus:ring-pink-400 focus:ring-opacity-50 transition"
+              placeholder="أدخل رقم هاتفك"
+            />
+          </label>
 
-      <label className="block mb-2">
-        رقم الهاتف
-        <input
-          type="tel"
-          name="phone"
-          value={form.phone}
-          onChange={handleChange}
-          className="w-full border p-2 rounded mt-1"
-        />
-      </label>
+          <label className="block">
+            <span className="text-white font-semibold">البريد الإلكتروني *</span>
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              required
+              className="mt-1 w-full rounded-md border border-white/30 bg-white/10 px-4 py-3 text-white placeholder-white/70 focus:border-pink-500 focus:ring focus:ring-pink-400 focus:ring-opacity-50 transition"
+              placeholder="أدخل بريدك الإلكتروني"
+            />
+          </label>
 
-      <label className="block mb-2">
-        البريد الإلكتروني *
-        <input
-          type="email"
-          name="email"
-          value={form.email}
-          onChange={handleChange}
-          required
-          className="w-full border p-2 rounded mt-1"
-        />
-      </label>
+          <label className="block">
+            <span className="text-white font-semibold">نبذة بسيطة عن الفكرة</span>
+            <textarea
+              name="idea"
+              value={form.idea}
+              onChange={handleChange}
+              rows={4}
+              className="mt-1 w-full rounded-md border border-white/30 bg-white/10 px-4 py-3 text-white placeholder-white/70 focus:border-pink-500 focus:ring focus:ring-pink-400 focus:ring-opacity-50 transition resize-none"
+              placeholder="شاركنا فكرتك أو متطلبات مشروعك"
+            ></textarea>
+          </label>
 
-      <label className="block mb-4">
-        نبذة بسيطة عن الفكرة
-        <textarea
-          name="idea"
-          value={form.idea}
-          onChange={handleChange}
-          className="w-full border p-2 rounded mt-1"
-          rows={4}
-        ></textarea>
-      </label>
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full bg-pink-600 hover:bg-pink-700 transition text-white font-semibold rounded-md py-3 shadow-lg shadow-pink-600/50 disabled:opacity-60 disabled:cursor-not-allowed"
+          >
+            {loading ? "جاري الإرسال..." : "إرسال الطلب"}
+          </button>
 
-      <button
-        type="submit"
-        disabled={loading}
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 disabled:opacity-50"
-      >
-        {loading ? "جاري الإرسال..." : "إرسال الطلب"}
-      </button>
-
-      {message && <p className="mt-4 text-center">{message}</p>}
-    </form>
+          {message && (
+            <p
+              className={`mt-4 text-center font-semibold ${
+                message.includes("خطأ") ? "text-red-400" : "text-green-400"
+              }`}
+            >
+              {message}
+            </p>
+          )}
+        </form>
+      </div>
+    </section>
   );
 }
