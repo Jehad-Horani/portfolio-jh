@@ -99,7 +99,7 @@ export default function WorkflowSection() {
   return (
     <section
       ref={containerRef}
-      className=" text-white py-20 px-6 md:px-16"
+      className=" text-white bg-gray-950 py-20 px-6 md:px-16"
     >
       <h2 className="text-center text-5xl font-extrabold mb-14 drop-shadow-lg">
         My Workflow
@@ -115,7 +115,7 @@ export default function WorkflowSection() {
         {workflowSteps.map(({ subtitle, title, description }, i) => (
           <div
             key={i}
-            className={`workflow-step relative max-w-3xl md:max-w-[600px] rounded-xl p-8 bg-white/10 backdrop-blur-md shadow-xl cursor-default
+            className={`workflow-step relative max-w-3xl md:max-w-[400px] rounded-xl p-8 bg-white/10 backdrop-blur-md shadow-xl cursor-default
               md:absolute md:w-1/2
               ${
                 i % 2 === 0

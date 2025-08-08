@@ -59,7 +59,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="bg-gray-950 mt-[1000px] py-16 px-6 md:px-16 text-white"
+      className="bg-gray-950 mt-[900px] py-16 px-6 md:px-16 text-white"
     >
       <div className="max-w-3xl mx-auto bg-white/10 backdrop-blur-md rounded-xl shadow-xl p-8">
         <h2 className="text-4xl font-extrabold mb-8 text-center drop-shadow-lg">
@@ -119,7 +119,7 @@ export default function ContactSection() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-pink-600 hover:bg-pink-700 transition text-white font-semibold rounded-md py-3 shadow-lg shadow-pink-600/50 disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-full bg-gradient-to-br from-pink-500 to-purple-600 hover:scale-105 cursor-pointer transition text-white font-semibold rounded-md py-3 shadow-lg shadow-pink-600/50 disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {loading ? "Sending..." : "Send Request"}
           </button>
