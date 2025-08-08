@@ -27,7 +27,7 @@ export default function Hero() {
         >
             {/* خلفية متحركة Parallax */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#0f172a,#000)]">
-                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 animate-[pulse_8s_infinite]" />
+                <div className="absolute inset-0  opacity-10 animate-[pulse_8s_infinite]" />
             </div>
 
             {/* هالة مضيئة خلف الصورة */}
@@ -94,7 +94,7 @@ export default function Hero() {
                 {/* زر متحرك بحدود متدرجة */}
                 <a
                     href="#projects"
-                    className="relative group px-6 py-3 rounded-lg text-white bg-blue-500 overflow-hidden"
+                    className="relative group px-6 py-3 rounded-lg text-white bg-gradient-to-br from-pink-500 to-purple-600  overflow-hidden"
                 >
                     <span className="absolute inset-0 border-2 border-transparent rounded-lg group-hover:border-blue-300 group-hover:animate-[spin_2s_linear_infinite]" />
                     <span className="relative flex items-center gap-2">

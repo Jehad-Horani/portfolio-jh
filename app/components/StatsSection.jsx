@@ -1,14 +1,19 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import CountUp from "react-countup";
 import { TrendingUp, Clock, Code, Heart } from "lucide-react";
+import { useInView } from "react-intersection-observer";
 
 export default function StatsSection() {
   useEffect(() => {
     AOS.init({ duration: 1200, once: true });
   }, []);
+  const { ref, inView } = useInView({
+    triggerOnce: true, // تشتغل مرة وحدة بس
+    threshold: 0.1,    // نسبة ظهور العنصر عشان يعتبر ظاهر (10%)
+  });
 
   const stats = [
     { value: 99, suffix: "%", label: "Search Engine Optimization (SEO)", icon: <TrendingUp className="mx-auto mb-3 text-blue-500" size={36} /> },
@@ -29,9 +34,13 @@ export default function StatsSection() {
             data-aos-delay={i * 200}
           >
             {icon}
-            <p className="text-5xl font-extrabold mb-2 text-blue-500">
-              <CountUp end={value} duration={4} suffix={suffix} />
-            </p>
+            <div className="text-5xl font-extrabold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500" ref={ref}>
+              {inView ? (
+                <CountUp end={value} duration={3} suffix={suffix} />
+              ) : (
+                <span>{value}{suffix}</span> // أو أي شكل قبل ما يبدأ العد
+              )}
+            </div>
             <p className="uppercase tracking-widest text-gray-400">{label}</p>
           </div>
         ))}

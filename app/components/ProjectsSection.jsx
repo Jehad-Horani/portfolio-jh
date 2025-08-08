@@ -10,7 +10,7 @@ const projects = [
       "A cutting-edge health tech conference website built with Next.js and Tailwind CSS. Features interactive sessions, speaker profiles, and smooth animations to engage attendees worldwide.",
     image: "/medroots.png",
     link: "https://www.medroots25.com",
-    tech: "Next.js, Tailwind CSS, GSAP, AOS",
+    tech: "Next.js, Tailwind CSS, GSAP, AOS, Supabase SQL",
   },
   {
     title: "Umaima Medical Center",
@@ -24,18 +24,11 @@ const projects = [
     title: "Little Lemon Restaurant",
     description:
       "A vibrant and friendly restaurant website featuring menu browsing, reservation forms, and mouth-watering visuals inspired by the authentic Little Lemon menu.",
-    image: "/littl.png",
-    link: "littil-lemon.vercel.app", 
+    image: "/littil.png",
+    link: "https://littil-lemon.vercel.app/",
     tech: "Next.js, Tailwind CSS, React, Form Handling",
   },
-  {
-    title: "Coffee Academy",
-    description:
-      "An educational website about coffee varieties, brewing techniques, and recipes, featuring a caffeine tracking tool for coffee lovers.",
-    image: "/coffee-academy.png",
-    link: "#", // حط الرابط الصحيح إذا موجود
-    tech: "HTML, CSS, JavaScript, Bootstrap",
-  },
+
 ];
 
 export default function ProjectsSection() {
@@ -44,7 +37,7 @@ export default function ProjectsSection() {
   }, []);
 
   return (
-    <section className="bg-gray-900 text-white py-20 px-6 md:px-16">
+    <section className="bg-gray-950 text-white py-20 px-6 md:px-16">
       <div className="max-w-7xl mx-auto text-center mb-16">
         <h2 className="text-5xl font-extrabold mb-4" data-aos="fade-down">
           Projects
@@ -59,7 +52,7 @@ export default function ProjectsSection() {
         </p>
       </div>
 
-      <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-12 md:grid-cols-1 lg:grid-cols-3">
         {projects.map(({ title, description, image, link, tech }, i) => (
           <div
             key={i}
@@ -76,18 +69,21 @@ export default function ProjectsSection() {
                   loading="lazy"
                 />
               </div>
+              </a>
               <div className="p-6">
                 <h3 className="text-2xl font-semibold mb-2">{title}</h3>
                 <p className="text-gray-300 mb-4 text-sm md:text-base">{description}</p>
-                <p className="text-sm text-blue-400 font-mono mb-4 italic">{tech}</p>
-                <button
-                  className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition"
-                  aria-label={`Visit ${title} project`}
-                >
-                  View Project
-                </button>
+                <p className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 font-mono mb-4 italic">{tech}</p>
+                <a href={link} target="_blank" rel="noopener noreferrer" className="block">
+
+                  <button
+                    className="bg-gradient-to-br from-pink-500 to-purple-600 hover:scale-105 cursor-pointer text-white py-2 px-4 rounded-lg transition"
+                    aria-label={`Visit ${title} project`}
+                  >
+                    View Project
+                  </button>
+                </a>
               </div>
-            </a>
           </div>
         ))}
       </div>
