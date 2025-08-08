@@ -54,7 +54,7 @@ export default function RequestsPage() {
             placeholder="أدخل كلمة السر"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full border p-2 rounded mb-4"
+            className="w-full bg-gray-900 border-2 border-amber-950 p-2 rounded mb-4"
           />
           <button
             type="submit"
