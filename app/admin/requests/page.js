@@ -43,12 +43,12 @@ export default function RequestsPage() {
 
   if (!authenticated) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="min-h-screen flex items-center justify-center bg-gray-900">
         <form
           onSubmit={handleLogin}
           className="bg-white p-6 rounded shadow-md w-80"
         >
-          <h2 className="text-xl font-bold mb-4 text-center">تسجيل الدخول</h2>
+          <h2 className="text-xl text-black font-bold mb-4 text-center">تسجيل الدخول</h2>
           <input
             type="password"
             placeholder="أدخل كلمة السر"
@@ -58,7 +58,7 @@ export default function RequestsPage() {
           />
           <button
             type="submit"
-            className="bg-blue-600 text-white px-4 py-2 rounded w-full"
+            className="bg-blue-600 cursor-pointer text-white px-4 py-2 rounded w-full"
           >
             دخول
           </button>
@@ -78,7 +78,7 @@ export default function RequestsPage() {
       {!loading && requests.length > 0 && (
         <table className="w-full border-collapse border">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className="bg-gray-800">
               <th className="border p-2">الاسم</th>
               <th className="border p-2">رقم الهاتف</th>
               <th className="border p-2">البريد الإلكتروني</th>
