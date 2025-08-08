@@ -54,29 +54,27 @@ export default function WorkflowSection() {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const stepsElements = containerRef.current.querySelectorAll(".workflow-step");
+    const steps = containerRef.current.querySelectorAll(".workflow-step");
 
-    stepsElements.forEach((step, i) => {
-      const direction = i % 2 === 0 ? -1 : 1; // تناوب بين اليمين واليسار
+    steps.forEach((step, i) => {
+      const direction = i % 2 === 0 ? -100 : 100; // alternate left/right
 
       gsap.fromTo(
         step,
         {
           autoAlpha: 0,
-          x: 200 * direction,
+          x: direction,
           y: 50,
-          rotation: direction * 15,
-          scale: 0.6,
-          filter: "blur(10px)",
+          scale: 0.9,
+          filter: "blur(8px)",
         },
         {
           autoAlpha: 1,
           x: 0,
           y: 0,
-          rotation: 0,
           scale: 1,
           filter: "blur(0px)",
-          duration: 1.4,
+          duration: 1.2,
           ease: "power4.out",
           scrollTrigger: {
             trigger: step,
@@ -85,11 +83,8 @@ export default function WorkflowSection() {
           },
         }
       );
-
-     
     });
 
-    // تنظيف عند إلغاء التركيب
     return () => {
       ScrollTrigger.getAll().forEach((st) => st.kill());
       gsap.globalTimeline.clear();
@@ -97,42 +92,37 @@ export default function WorkflowSection() {
   }, []);
 
   return (
-    <section
-      ref={containerRef}
-      className=" text-white  bg-gray-950 py-20 px-6 md:px-16"
-    >
+    <section ref={containerRef} className="bg-gray-950 text-white py-20 px-6 md:px-16">
       <h2 className="text-center text-5xl font-extrabold mb-14 drop-shadow-lg">
-        My Workflow to make your website
+        My Workflow to Make Your Website
       </h2>
 
-    
+      <div className="relative max-w-6xl mx-auto">
+        {/* Timeline line for desktop */}
+        <div className="hidden md:block absolute left-1/2 top-0 w-1 bg-gradient-to-b from-pink-500 to-purple-600 h-full transform -translate-x-1/2"></div>
 
-        {workflowSteps.map(({ subtitle, title, description }, i) => (
-          <div
-            key={i}
-            className={`workflow-step relative max-w-3xl md:max-w-[400px] rounded-xl p-8 bg-white/10 backdrop-blur-md shadow-xl cursor-default
-              md:absolute md:w-1/2
-              ${
-                i % 2 === 0
-                  ? "md:left-0 text-left md:translate-x-[-30px]"
-                  : "md:right-0 text-right md:translate-x-[30px]"
-              }
-              `}
-            style={{ top: `${i * 120}px` }}
-          >
+        <div className="space-y-16">
+          {workflowSteps.map(({ subtitle, title, description }, i) => (
             <div
-              className={`absolute top-8 md:top-10 ${
-                i % 2 === 0 ? "right-[-70px]" : "left-[-70px]"
-              } w-16 h-16 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 text-white flex items-center justify-center text-3xl font-bold drop-shadow-lg`}
+              key={i}
+              className={`workflow-step relative md:w-1/2 px-6 py-8 rounded-xl bg-white/10 backdrop-blur-md shadow-lg
+                ${i % 2 === 0 ? "md:ml-0 md:mr-auto" : "md:ml-auto md:mr-0"}
+              `}
             >
-              {subtitle.replace("Step ", "")}
-            </div>
+              {/* Number Circle */}
+              <div
+                className={`hidden md:flex absolute top-8 w-16 h-16 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 text-white items-center justify-center text-2xl font-bold drop-shadow-lg
+                ${i % 2 === 0 ? "right-[-40px]" : "left-[-40px]"}`}
+              >
+                {subtitle.replace("Step ", "")}
+              </div>
 
-            <h3 className="text-3xl font-semibold mb-2">{title}</h3>
-            <p className="text-gray-200 leading-relaxed">{description}</p>
-          </div>
-        ))}
-      
+              <h3 className="text-3xl font-semibold mb-2">{title}</h3>
+              <p className="text-gray-200 leading-relaxed">{description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
