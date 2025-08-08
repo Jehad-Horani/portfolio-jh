@@ -92,7 +92,7 @@ export default function WorkflowSection() {
   }, []);
 
   return (
-    <section ref={containerRef} className="bg-gray-950 text-white py-20 px-6 md:px-16">
+    <section id="Process" ref={containerRef} className="bg-gray-950 text-white py-20 px-6 md:px-16">
       <h2 className="text-center text-5xl font-extrabold mb-14 drop-shadow-lg">
         My Workflow to Make Your Website
       </h2>

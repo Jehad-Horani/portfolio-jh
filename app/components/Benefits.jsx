@@ -178,7 +178,7 @@ export default function BenefitsSection() {
     ];
 
     return (
-        <section className="py-16 bg-gray-950 text-white px-6 md:px-16">
+        <section id="Benefits" className="py-16 bg-gray-950 text-white px-6 md:px-16">
             <h1 className="text-6xl font-extrabold text-center mb-2" data-aos="fade-down">
                 Why Choose to Build Your Website With Me?
             </h1>

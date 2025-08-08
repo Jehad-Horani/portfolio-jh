@@ -37,7 +37,7 @@ export default function ProjectsSection() {
   }, []);
 
   return (
-    <section className="bg-gray-950 text-white py-20 px-6 md:px-16">
+    <section id="projects" className="bg-gray-950 text-white py-20 px-6 md:px-16">
       <div className="max-w-7xl mx-auto text-center mb-16">
         <h2 className="text-5xl font-extrabold mb-4" data-aos="fade-down">
           Projects

@@ -27,11 +27,11 @@ export default function Navbar() {
         {/* النص في المنتصف */}
         <div className="absolute left-1/2 transform -translate-x-1/2 text-white font-semibold text-lg md:flex items-center gap-6 hidden ">
           <Link  data-aos="fade-down"
-                data-aos-delay="190" href="#home" className="text-gray-300 hover:text-blue-500 transition">Home</Link>
+                data-aos-delay="190" href="#Benefits" className="text-gray-300 hover:text-blue-500 transition">Benefits</Link>
           <Link  data-aos="fade-down"
                 data-aos-delay="160" href="#projects" className="text-gray-300 hover:text-blue-500 transition">Projects</Link>
           <Link  data-aos="fade-down"
-                data-aos-delay="130" href="#about" className="text-gray-300 hover:text-blue-500 transition">About</Link>
+                data-aos-delay="130" href="#Process" className="text-gray-300 hover:text-blue-500 transition">Process</Link>
           <Link  data-aos="fade-down"
                 data-aos-delay="100" href="#contact" className="text-gray-300 hover:text-blue-500 transition">Contact</Link>
           
@@ -41,7 +41,7 @@ export default function Navbar() {
         <div className="flex items-center gap-6">
         
           <a
-            href="#request"
+            href="#contact"
             className="bg-gradient-to-br from-pink-500 to-purple-600  hover:scale-105 text-white px-4 py-2 rounded-lg transition"
             data-aos="fade-down"
                 data-aos-delay="90"
