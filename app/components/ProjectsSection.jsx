@@ -8,7 +8,7 @@ const projects = [
     title: "MedRoots 25 Conference",
     description:
       "A cutting-edge health tech conference website built with Next.js and Tailwind CSS. Features interactive sessions, speaker profiles, and smooth animations to engage attendees worldwide.",
-    image: "/medroots25.png",
+    image: "/medroots.png",
     link: "https://www.medroots25.com",
     tech: "Next.js, Tailwind CSS, GSAP, AOS",
   },
@@ -16,7 +16,7 @@ const projects = [
     title: "Umaima Medical Center",
     description:
       "A sleek, modern medical center website designed for beauty and healthcare services, emphasizing a dark theme with smooth user experience and booking integration.",
-    image: "/umaima-medical-center.png",
+    image: "/umaima.png",
     link: "https://www.umaima-medical-center.com",
     tech: "Next.js, Tailwind CSS, GSAP, Vercel",
   },
@@ -24,8 +24,8 @@ const projects = [
     title: "Little Lemon Restaurant",
     description:
       "A vibrant and friendly restaurant website featuring menu browsing, reservation forms, and mouth-watering visuals inspired by the authentic Little Lemon menu.",
-    image: "/little-lemon.png",
-    link: "#", // حط الرابط الصحيح إذا موجود
+    image: "/littl.png",
+    link: "littil-lemon.vercel.app", 
     tech: "Next.js, Tailwind CSS, React, Form Handling",
   },
   {

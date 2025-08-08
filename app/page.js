@@ -1,6 +1,7 @@
 import BenefitsSection from "./components/Benefits";
 import Hero from "./components/Hero";
-import TypingScrollSection from "./components/second";
+import ProjectsSection from "./components/ProjectsSection";
+import TypingScrollSection from "./components/Second";
 import StatsSection from "./components/StatsSection";
 
 
@@ -12,6 +13,7 @@ export default function Home() {
      <TypingScrollSection/>
      <BenefitsSection/>
     <StatsSection/>
+    <ProjectsSection/>
     </main>
   );
 }
