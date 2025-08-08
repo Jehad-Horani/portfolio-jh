@@ -99,18 +99,13 @@ export default function WorkflowSection() {
   return (
     <section
       ref={containerRef}
-      className=" text-white overflow-hidden bg-gray-950 py-20 px-6 md:px-16"
+      className=" text-white  bg-gray-950 py-20 px-6 md:px-16"
     >
       <h2 className="text-center text-5xl font-extrabold mb-14 drop-shadow-lg">
         My Workflow to make your website
       </h2>
 
-      <div className="max-w-4xl  bg-gray-950 mx-auto space-y-20 relative">
-        {/* خط عمودي في المنتصف */}
-        <div
-          
-          className="block absolute left-1/2 top-0 bottom-0 w-1 bg-white transform -translate-x-1/2 rounded-full"
-        ></div>
+    
 
         {workflowSteps.map(({ subtitle, title, description }, i) => (
           <div
@@ -137,7 +132,7 @@ export default function WorkflowSection() {
             <p className="text-gray-200 leading-relaxed">{description}</p>
           </div>
         ))}
-      </div>
+      
     </section>
   );
 }
