@@ -1,0 +1,33 @@
+{
+  "name": "my-website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.6.1",
+    "@react-three/fiber": "^9.3.0",
+    "@supabase/supabase-js": "^2.54.0",
+    "aos": "^2.3.4",
+    "framer-motion": "^12.23.12",
+    "gsap": "^3.13.0",
+    "lucide-react": "^0.539.0",
+    "next": "^15.4.1",
+    "react": "^19.1.0",
+    "react-countup": "^6.5.3",
+    "react-dom": "^19.1.0",
+    "react-tsparticles": "^2.12.2",
+    "three": "^0.179.1",
+    "tsparticles": "^3.9.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
+  }
+}
