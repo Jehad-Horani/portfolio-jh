@@ -4,4 +4,5 @@ html, body {
   scroll-behavior: smooth;
   background-color: #0f0f0f;
   color: white;
+  overflow: hidden;
 }

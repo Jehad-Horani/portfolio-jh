@@ -99,16 +99,16 @@ export default function WorkflowSection() {
   return (
     <section
       ref={containerRef}
-      className=" text-white bg-gray-950 py-20 px-6 md:px-16"
+      className=" text-white overflow-hidden bg-gray-950 py-20 px-6 md:px-16"
     >
       <h2 className="text-center text-5xl font-extrabold mb-14 drop-shadow-lg">
-        My Workflow
+        My Workflow to make your website
       </h2>
 
-      <div className="max-w-4xl mx-auto space-y-20 relative">
+      <div className="max-w-4xl  bg-gray-950 mx-auto space-y-20 relative">
         {/* خط عمودي في المنتصف */}
         <div
-          aria-hidden="true"
+          
           className="block absolute left-1/2 top-0 bottom-0 w-1 bg-white transform -translate-x-1/2 rounded-full"
         ></div>
 
