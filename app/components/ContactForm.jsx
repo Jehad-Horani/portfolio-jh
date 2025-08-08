@@ -59,7 +59,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="bg-gray-950 mt-[900px] py-16 px-6 md:px-16 text-white"
+      className="bg-gray-950 py-16 px-6 md:px-16 text-white"
     >
       <div className="max-w-3xl mx-auto bg-white/10 backdrop-blur-md rounded-xl shadow-xl p-8">
         <h2 className="text-4xl font-extrabold mb-8 text-center drop-shadow-lg">

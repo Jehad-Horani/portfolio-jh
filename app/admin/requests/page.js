@@ -1,4 +1,4 @@
-"use client"; // لو Next.js app directory
+"use client";
 
 import { useEffect, useState } from "react";
 import { supabase } from "../../../lib/supabaseClient";
@@ -6,10 +6,16 @@ import { supabase } from "../../../lib/supabaseClient";
 export default function RequestsPage() {
   const [requests, setRequests] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [authenticated, setAuthenticated] = useState(false);
+  const [password, setPassword] = useState("");
+
+  const correctPassword = "JehadHorani2005"; // كلمة السر
 
   useEffect(() => {
-    fetchRequests();
-  }, []);
+    if (authenticated) {
+      fetchRequests();
+    }
+  }, [authenticated]);
 
   const fetchRequests = async () => {
     setLoading(true);
@@ -25,6 +31,41 @@ export default function RequestsPage() {
     }
     setLoading(false);
   };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (password === correctPassword) {
+      setAuthenticated(true);
+    } else {
+      alert("كلمة السر غير صحيحة");
+    }
+  };
+
+  if (!authenticated) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <form
+          onSubmit={handleLogin}
+          className="bg-white p-6 rounded shadow-md w-80"
+        >
+          <h2 className="text-xl font-bold mb-4 text-center">تسجيل الدخول</h2>
+          <input
+            type="password"
+            placeholder="أدخل كلمة السر"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full border p-2 rounded mb-4"
+          />
+          <button
+            type="submit"
+            className="bg-blue-600 text-white px-4 py-2 rounded w-full"
+          >
+            دخول
+          </button>
+        </form>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-4xl mt-30 mx-auto p-6">
