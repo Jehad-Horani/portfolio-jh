@@ -57,7 +57,7 @@ export default function Hero() {
 
             {/* الاسم يتحرك بشكل أقل */}
             <h1
-                className="mt-6 text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 drop-shadow-lg"
+                className="mt-6 text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 drop-shadow-lg"
                 style={{
                     transform: `translateX(${offset.x / 5}px) translateY(${offset.y / 5}px)`,
                     transition: offset.x === 0 && offset.y === 0 ? "transform 0.5s ease" : "none",
