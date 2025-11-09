@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Mail, Instagram, Linkedin, Phone } from "lucide-react";
 
 export default function Hero() {
     const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -102,6 +102,46 @@ export default function Hero() {
                     </span>
                 </a>
             </div>
-        </section>
-    );
+             {/* مواقع التواصل */}
+      <div
+        className="mt-10 flex items-center justify-center gap-6 text-gray-300"
+        data-aos="fade-up"
+        data-aos-delay="600"
+      >
+        <a
+          href="https://www.instagram.com/_jehad05_/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-pink-500 transition-transform hover:scale-110"
+        >
+          <Instagram size={24} />
+        </a>
+
+        <a
+          href="https://wa.me/962778654506"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-green-500 transition-transform hover:scale-110"
+        >
+          <Phone size={24} />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/jehad-alhourani-33909a2b1/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-blue-500 transition-transform hover:scale-110"
+        >
+          <Linkedin size={24} />
+        </a>
+
+        <a
+          href="mailto:jehadhorani18@gmail.com"
+          className="hover:text-yellow-400 transition-transform hover:scale-110"
+        >
+          <Mail size={24} />
+        </a>
+      </div>
+    </section>
+  );
 }
