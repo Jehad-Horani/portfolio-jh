@@ -4,6 +4,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const projects = [
+   {
+    title: "Takhassus.com",
+    description:
+      "An integrated academic marketplace and student hub offering book trading, lecture exchanges, curated summaries, and major-specific updates. The platform also features a specialized ambassador system that connects students with representatives from each major for personalized academic guidance.",
+    image: "/takhassus.png",
+    link: "https://takhassus.com",
+    tech: "Next.js, Tailwind CSS, Vercel , Supabase SQL , TypeScript",
+  },
   {
     title: "MedRoots 25 Conference",
     description:
@@ -12,6 +20,7 @@ const projects = [
     link: "https://www.medroots25.com",
     tech: "Next.js, Tailwind CSS, GSAP, AOS, Supabase SQL",
   },
+
   {
     title: "Umaima Medical Center",
     description:
@@ -28,6 +37,7 @@ const projects = [
     link: "https://littil-lemon.vercel.app/",
     tech: "Next.js, Tailwind CSS, React, Form Handling",
   },
+ 
 
 ];
 
@@ -69,21 +79,21 @@ export default function ProjectsSection() {
                   loading="lazy"
                 />
               </div>
-              </a>
-              <div className="p-6">
-                <h3 className="text-2xl font-semibold mb-2">{title}</h3>
-                <p className="text-gray-300 mb-4 text-sm md:text-base">{description}</p>
-                <p className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 font-mono mb-4 italic">{tech}</p>
-                <a href={link} target="_blank" rel="noopener noreferrer" className="block">
+            </a>
+            <div className="p-6">
+              <h3 className="text-2xl font-semibold mb-2">{title}</h3>
+              <p className="text-gray-300 mb-4 text-sm md:text-base">{description}</p>
+              <p className="text-sm text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 font-mono mb-4 italic">{tech}</p>
+              <a href={link} target="_blank" rel="noopener noreferrer" className="block">
 
-                  <button
-                    className="bg-gradient-to-br from-pink-500 to-purple-600 hover:scale-105 cursor-pointer text-white py-2 px-4 rounded-lg transition"
-                    aria-label={`Visit ${title} project`}
-                  >
-                    View Project
-                  </button>
-                </a>
-              </div>
+                <button
+                  className="bg-gradient-to-br from-pink-500 to-purple-600 hover:scale-105 cursor-pointer text-white py-2 px-4 rounded-lg transition"
+                  aria-label={`Visit ${title} project`}
+                >
+                  View Project
+                </button>
+              </a>
+            </div>
           </div>
         ))}
       </div>
