@@ -48,8 +48,8 @@ export default function Hero() {
                     <Image
                         src="/jehad.png"
                         alt="Jehad Horani"
-                        width={220}
-                        height={220}
+                        width={210}
+                        height={210}
                         className="rounded-full border-4 border-blue-500/50 shadow-[0_0_40px_rgba(59,130,246,0.7)]"
                     />
                 </div>
@@ -57,7 +57,7 @@ export default function Hero() {
 
             {/* الاسم يتحرك بشكل أقل */}
             <h1
-                className="mt-6 text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 drop-shadow-lg"
+                className="mt-6 text-6xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-500 drop-shadow-lg"
                 style={{
                     transform: `translateX(${offset.x / 5}px) translateY(${offset.y / 5}px)`,
                     transition: offset.x === 0 && offset.y === 0 ? "transform 0.5s ease" : "none",

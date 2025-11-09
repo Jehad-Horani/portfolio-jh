@@ -7,8 +7,8 @@ const projects = [
    {
     title: "Takhassus.com",
     description:
-      "An integrated academic marketplace and student hub offering book trading, lecture exchanges, curated summaries, and major-specific updates. The platform also features a specialized ambassador system that connects students with representatives from each major for personalized academic guidance.",
-    image: "/takhassus.png",
+      "An integrated academic marketplace and student hub offering book trading, lecture exchanges, curated summaries, and major-specific updates. ",
+    image: "/takhassus.com.png",
     link: "https://takhassus.com",
     tech: "Next.js, Tailwind CSS, Vercel , Supabase SQL , TypeScript",
   },
