@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { ArrowRight, Mail, Instagram, Linkedin, Phone } from "lucide-react";
+import { ArrowRight, Mail, Instagram, Linkedin, Phone, MessageCircle } from "lucide-react";
 
 export default function Hero() {
     const [offset, setOffset] = useState({ x: 0, y: 0 });
@@ -123,7 +123,7 @@ export default function Hero() {
           rel="noopener noreferrer"
           className="hover:text-green-500 transition-transform hover:scale-110"
         >
-          <Phone size={24} />
+          <MessageCircle size={24} />
         </a>
 
         <a
